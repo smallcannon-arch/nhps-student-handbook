@@ -108,6 +108,33 @@
     "source_owner_note": "需確認健康中心服務範圍、通知原則與緊急傷病流程。"
   },
   {
+    "id": "lunch_meal_refund_special_diet",
+    "title": "午餐、退餐或特殊飲食怎麼確認？",
+    "category": "健康與午餐",
+    "audience": ["家長", "高年級學生"],
+    "grade_level": "全校",
+    "situation": "家長想了解午餐供應、退餐或孩子有特殊飲食需求時，可以先確認哪些事項。",
+    "summary_parent": "午餐、退餐或特殊飲食需求，建議先依學校公告或班級通知確認，必要時再洽導師或午餐承辦。實際期限、費用與申請方式仍需由權責單位確認後公告。",
+    "summary_student": "如果我對午餐、餐具或特殊飲食有問題，可以先告訴導師，請老師協助確認。",
+    "steps": ["先查看學校公告、班級通知或午餐相關入口。", "若涉及退餐、特殊飲食或過敏提醒，請家長先聯絡導師協助確認。", "實際申請期限、費用或處理方式，應以學校正式公告或午餐承辦確認為準。"],
+    "contact_unit": ["導師", "午餐承辦", "學務處"],
+    "links": [],
+    "forms": [],
+    "legal_basis": [],
+    "keywords": ["午餐", "退餐", "訂餐", "特殊飲食", "過敏", "餐具", "飲食"],
+    "status": "draft",
+    "pinned": true,
+    "updated_at": "2026-06-02",
+    "owner": "午餐承辦",
+    "reviewer": "學務處",
+    "source_urls": [],
+    "source_status": "校網有入口但需處室確認",
+    "source_type": "校園午餐入口",
+    "source_checked_at": "",
+    "needs_office_review": true,
+    "source_owner_note": "校網有午餐相關入口，但退餐期限、特殊飲食、費用與申請流程需由午餐承辦或學務處確認後才能定稿。"
+  },
+  {
     "id": "learning-calendar",
     "title": "我想查課表或行事曆。",
     "category": "學習與活動",
@@ -216,4 +243,3 @@
     "source_owner_note": "需盤點各處室表單，避免舊版或重複表單直接上線。"
   }
 ]
-
