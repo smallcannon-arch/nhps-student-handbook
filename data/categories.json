@@ -1,7 +1,7 @@
 [
   {
     "id": "daily",
-    "label": "今日作息",
+    "label": "在校作息",
     "description": "查詢上學、放學、特殊作息與每日提醒。",
     "icon": "time",
     "sort_order": 1

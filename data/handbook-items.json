@@ -2,7 +2,7 @@
   {
     "id": "daily-dismissal-time",
     "title": "今天幾點放學？",
-    "category": "今日作息",
+    "category": "在校作息",
     "audience": ["家長", "高年級學生"],
     "grade_level": "全校",
     "situation": "家長想確認當天放學時間。",
