@@ -1,0 +1,45 @@
+[
+  {
+    "id": "daily",
+    "label": "今日作息",
+    "description": "查詢上學、放學、特殊作息與每日提醒。",
+    "icon": "time",
+    "sort_order": 1
+  },
+  {
+    "id": "attendance",
+    "label": "請假與出缺席",
+    "description": "了解病假、事假、遲到、早退與出缺席聯繫方向。",
+    "icon": "note",
+    "sort_order": 2
+  },
+  {
+    "id": "pickup",
+    "label": "上放學與接送",
+    "description": "整理路隊、家長接送、安親班接送與雨天放學資訊。",
+    "icon": "route",
+    "sort_order": 3
+  },
+  {
+    "id": "health",
+    "label": "健康與午餐",
+    "description": "整理健康中心、學生身體不適、午餐與校園生活照顧資訊。",
+    "icon": "health",
+    "sort_order": 4
+  },
+  {
+    "id": "learning",
+    "label": "學習與活動",
+    "description": "查詢課表、行事曆、評量、圖書館、社團與活動。",
+    "icon": "book",
+    "sort_order": 5
+  },
+  {
+    "id": "help",
+    "label": "找人幫忙",
+    "description": "提供安全、人際、輔導、申訴、霸凌與性平議題的求助方向。",
+    "icon": "help",
+    "sort_order": 6
+  }
+]
+

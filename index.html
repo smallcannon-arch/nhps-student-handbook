@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>內湖國小學生手冊</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17324d;
+      --muted: #5d6c7d;
+      --line: #d7dfeb;
+      --paper: #fbf7ef;
+      --panel: #ffffff;
+      --soft: #eef4f8;
+      --accent: #2f6f8f;
+      --accent-dark: #194c68;
+      --safe: #567d68;
+      --warn: #8a6f39;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-dark);
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: #17324d;
+      color: #fff;
+      padding: 32px 18px 28px;
+    }
+
+    .hero-inner,
+    .main,
+    .footer-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #d7e5ef;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      color: #edf4f8;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .intro {
+      margin: 14px 0 0;
+      max-width: 760px;
+      color: #dfe9ef;
+    }
+
+    .main {
+      padding: 20px 18px 36px;
+    }
+
+    .search-panel {
+      margin-top: -16px;
+      padding: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(23, 50, 77, 0.08);
+    }
+
+    label {
+      display: block;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid #b8c7d5;
+      border-radius: 6px;
+      color: var(--ink);
+      font: inherit;
+      background: #fff;
+    }
+
+    .hint {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .entry-button {
+      min-height: 64px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--panel);
+      text-align: left;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .entry-button:hover,
+    .entry-button:focus-visible {
+      border-color: var(--accent);
+      outline: 2px solid rgba(47, 111, 143, 0.18);
+      outline-offset: 2px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .card-section {
+      margin: 0;
+    }
+
+    .card-section strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--accent-dark);
+      font-size: 0.92rem;
+    }
+
+    .meta {
+      display: grid;
+      gap: 4px;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .status {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .empty {
+      padding: 18px;
+      border: 1px dashed #b8c7d5;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: #f4efe6;
+      color: var(--muted);
+      padding: 22px 18px;
+    }
+
+    .footer-inner p {
+      margin: 0 0 8px;
+    }
+
+    @media (max-width: 720px) {
+      .entry-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .main {
+        padding-inline: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">家長校園生活入口｜高年級學生友善版</p>
+        <h1>內湖國小學生手冊</h1>
+        <p class="subtitle">家長校園生活入口｜高年級學生友善版</p>
+        <p class="intro">本頁為第一版靜態 MVP，用於整理家長與學生常用校園生活資訊。內容仍需由權責處室查核後，才能作為正式公告或流程依據。</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="search-panel" aria-labelledby="search-title">
+        <label id="search-title" for="search-input">搜尋學生手冊</label>
+        <input id="search-input" type="search" placeholder="請輸入請假、放學、接送、健康中心、午餐、霸凌、性平……" autocomplete="off">
+        <p class="hint">第一版先提供簡易查找與分類瀏覽；資料以靜態範例為主，正式內容須完成來源查核。</p>
+      </section>
+
+      <section class="section" aria-labelledby="entry-title">
+        <h2 id="entry-title">六大入口</h2>
+        <div class="entry-grid" id="entry-grid"></div>
+      </section>
+
+      <section class="section" aria-labelledby="cards-title">
+        <h2 id="cards-title">常用卡片</h2>
+        <div class="cards" id="cards"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>本手冊第一版為公開資訊整理，不蒐集個資。</p>
+        <p>涉及安全、霸凌、性平或緊急事件，請立即聯繫學校或可信任大人。</p>
+        <p>本頁不作個案認定或法律判斷。</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const fallbackCategories = [
+      { id: "daily", label: "今日作息", description: "查詢上學、放學與每日提醒。", icon: "time", sort_order: 1 },
+      { id: "attendance", label: "請假與出缺席", description: "了解病假、事假、遲到與早退應找誰確認。", icon: "note", sort_order: 2 },
+      { id: "pickup", label: "上放學與接送", description: "整理接送、路隊、安親班與雨天放學資訊。", icon: "route", sort_order: 3 },
+      { id: "health", label: "健康與午餐", description: "健康中心、午餐與校園生活照顧資訊。", icon: "health", sort_order: 4 },
+      { id: "learning", label: "學習與活動", description: "課表、行事曆、圖書館、社團與校外教學。", icon: "book", sort_order: 5 },
+      { id: "help", label: "找人幫忙", description: "遇到安全、人際或其他困難時的求助方向。", icon: "help", sort_order: 6 }
+    ];
+
+    const fallbackItems = [
+      {
+        id: "daily-dismissal-time",
+        title: "今天幾點放學？",
+        category: "今日作息",
+        summary_parent: "第一版先提供查詢入口與需確認欄位，實際放學時間需依班級課表、學校公告或導師通知為準。",
+        summary_student: "我可以先看聯絡簿、班級通知，或問導師今天幾點放學。",
+        contact_unit: ["導師", "教務處", "學務處"],
+        source_status: "校網有入口但需處室確認",
+        updated_at: "2026-06-02",
+        keywords: ["放學", "作息", "課表"]
+      },
+      {
+        id: "attendance-sick-leave",
+        title: "孩子今天生病不能到校怎麼辦？",
+        category: "請假與出缺席",
+        summary_parent: "請假流程與時限需由學校確認後公告；第一版先提醒家長以導師或學校正式管道確認。",
+        summary_student: "我身體不舒服時，可以告訴家長，請家長協助向老師說明。",
+        contact_unit: ["導師", "學務處"],
+        source_status: "校網未找到，需人工提供",
+        updated_at: "2026-06-02",
+        keywords: ["請假", "病假", "生病", "出缺席"]
+      },
+      {
+        id: "pickup-rainy-day",
+        title: "雨天接送要注意什麼？",
+        category: "上放學與接送",
+        summary_parent: "雨天放學、接送區與路隊調整需由學務處或導師確認；正式資訊應以學校公告為準。",
+        summary_student: "下雨時我可以跟著班級隊伍走，不自己離開，也可以問老師或值勤人員。",
+        contact_unit: ["學務處", "導師"],
+        source_status: "校網未找到，需人工提供",
+        updated_at: "2026-06-02",
+        keywords: ["雨天", "接送", "路隊", "放學"]
+      },
+      {
+        id: "health-center-unwell",
+        title: "孩子在校身體不舒服怎麼辦？",
+        category: "健康與午餐",
+        summary_parent: "健康中心與通知流程需由健康中心查核後定稿；第一版先說明學生可主動求助，不蒐集健康細節。",
+        summary_student: "我身體不舒服時，可以先告訴老師，再到健康中心請大人協助。",
+        contact_unit: ["健康中心", "導師"],
+        source_status: "校網有入口但需處室確認",
+        updated_at: "2026-06-02",
+        keywords: ["健康中心", "身體不舒服", "受傷", "發燒"]
+      },
+      {
+        id: "learning-calendar",
+        title: "我想查課表或行事曆。",
+        category: "學習與活動",
+        summary_parent: "行事曆可先連到校網公開入口；班級課表與活動細節仍需依導師或處室公告確認。",
+        summary_student: "我可以看班級課表、聯絡簿或學校公告，不確定時問老師。",
+        contact_unit: ["教務處", "導師"],
+        source_status: "校網有公開入口，需確認最新版本",
+        updated_at: "2026-06-02",
+        keywords: ["課表", "行事曆", "活動", "評量"]
+      },
+      {
+        id: "help-bullying-support",
+        title: "我覺得被同學欺負或不舒服，可以找誰？",
+        category: "找人幫忙",
+        summary_parent: "手冊只提供求助方向，不要求家長或學生自行判斷事件是否成立；學校會依規定受理與處理。",
+        summary_student: "我可以先找導師、學務處、輔導室、家長或信任的大人，說出我遇到的狀況。",
+        contact_unit: ["導師", "學務處", "輔導室"],
+        source_status: "校網有入口但需處室確認",
+        updated_at: "2026-06-02",
+        keywords: ["霸凌", "欺負", "求助", "不舒服"]
+      },
+      {
+        id: "help-gender-equity-support",
+        title: "疑似性平事件可以找誰？",
+        category: "找人幫忙",
+        summary_parent: "性平議題只呈現求助管道與保護原則，不提供認定教學、法律結論或個案建議。",
+        summary_student: "如果有人讓我覺得害怕、不舒服或不知道怎麼辦，我可以找家長、導師、輔導室、學務處或信任的大人。",
+        contact_unit: ["導師", "輔導室", "學務處"],
+        source_status: "校網有入口但需處室確認",
+        updated_at: "2026-06-02",
+        keywords: ["性平", "性別平等", "求助", "不舒服"]
+      },
+      {
+        id: "forms-common",
+        title: "常用表單在哪裡？",
+        category: "學習與活動",
+        summary_parent: "第一版先列為待盤點項目；正式上線前需由各處室確認表單版本與下載位置。",
+        summary_student: "需要表單時，我可以請家長或老師幫忙確認最新版本。",
+        contact_unit: ["教務處", "學務處", "總務處"],
+        source_status: "校網未找到統一入口，需人工提供",
+        updated_at: "2026-06-02",
+        keywords: ["表單", "下載", "申請"]
+      }
+    ];
+
+    const state = {
+      items: fallbackItems,
+      categories: fallbackCategories,
+      activeCategory: "",
+      query: ""
+    };
+
+    const entryGrid = document.querySelector("#entry-grid");
+    const cards = document.querySelector("#cards");
+    const searchInput = document.querySelector("#search-input");
+
+    function textIncludes(item, query) {
+      if (!query) return true;
+      const haystack = [
+        item.title,
+        item.category,
+        item.summary_parent,
+        item.summary_student,
+        ...(item.contact_unit || []),
+        ...(item.keywords || [])
+      ].join(" ");
+      return haystack.toLowerCase().includes(query.toLowerCase());
+    }
+
+    function renderEntries() {
+      entryGrid.innerHTML = "";
+      state.categories
+        .slice()
+        .sort((a, b) => a.sort_order - b.sort_order)
+        .forEach((category) => {
+          const button = document.createElement("button");
+          button.className = "entry-button";
+          button.type = "button";
+          button.textContent = category.label;
+          button.title = category.description;
+          button.addEventListener("click", () => {
+            state.activeCategory = state.activeCategory === category.label ? "" : category.label;
+            renderCards();
+          });
+          entryGrid.appendChild(button);
+        });
+    }
+
+    function renderCards() {
+      const filtered = state.items.filter((item) => {
+        const matchCategory = !state.activeCategory || item.category === state.activeCategory;
+        return matchCategory && textIncludes(item, state.query);
+      });
+
+      cards.innerHTML = "";
+
+      if (!filtered.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "目前沒有符合條件的卡片。請改用其他關鍵字，或回到六大入口查看。";
+        cards.appendChild(empty);
+        return;
+      }
+
+      filtered.forEach((item) => {
+        const article = document.createElement("article");
+        article.className = "card";
+        article.innerHTML = `
+          <div class="tag-row">
+            <span class="tag">${item.category}</span>
+          </div>
+          <h3>${item.title}</h3>
+          <p class="card-section"><strong>給家長</strong>${item.summary_parent}</p>
+          <p class="card-section"><strong>學生這樣做</strong>${item.summary_student}</p>
+          <p class="card-section"><strong>找誰</strong>${(item.contact_unit || []).join("、") || "待確認"}</p>
+          <div class="meta">
+            <span class="status">來源狀態：${item.source_status || "待確認"}</span>
+            <span>更新日期：${item.updated_at || "待確認"}</span>
+          </div>
+        `;
+        cards.appendChild(article);
+      });
+    }
+
+    async function loadJson(path, fallback) {
+      if (window.location.protocol === "file:") {
+        return fallback;
+      }
+
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) return fallback;
+        return await response.json();
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    searchInput.addEventListener("input", (event) => {
+      state.query = event.target.value.trim();
+      renderCards();
+    });
+
+    async function init() {
+      const [items, categories] = await Promise.all([
+        loadJson("data/handbook-items.json", fallbackItems),
+        loadJson("data/categories.json", fallbackCategories)
+      ]);
+      state.items = Array.isArray(items) ? items : fallbackItems;
+      state.categories = Array.isArray(categories) ? categories : fallbackCategories;
+      renderEntries();
+      renderCards();
+    }
+
+    init();
+  </script>
+</body>
+</html>
+
