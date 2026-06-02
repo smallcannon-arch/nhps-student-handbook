@@ -400,17 +400,26 @@
     const cards = document.querySelector("#cards");
     const searchInput = document.querySelector("#search-input");
 
-    function textIncludes(item, query) {
-      if (!query) return true;
-      const haystack = [
-        item.title,
-        item.category,
-        item.summary_parent,
-        item.summary_student,
-        ...(item.contact_unit || []),
-        ...(item.keywords || [])
-      ].join(" ");
-      return haystack.toLowerCase().includes(query.toLowerCase());
+    function matchesText(value, query) {
+      return String(value || "").toLowerCase().includes(query);
+    }
+
+    function matchesList(values, query) {
+      return (values || []).some((value) => matchesText(value, query));
+    }
+
+    function getSearchScore(item, query) {
+      if (!query) return 1;
+
+      let score = 0;
+      if (matchesText(item.title, query)) score += 100;
+      if (matchesList(item.keywords, query)) score += 80;
+      if (matchesText(item.situation, query)) score += 50;
+      if (matchesText(item.summary_parent, query)) score += 45;
+      if (matchesText(item.summary_student, query)) score += 40;
+      if (matchesList(item.contact_unit, query)) score += 30;
+      if (matchesText(item.category, query)) score += 20;
+      return score;
     }
 
     function renderEntries() {
@@ -433,10 +442,23 @@
     }
 
     function renderCards() {
-      const filtered = state.items.filter((item) => {
-        const matchCategory = !state.activeCategory || item.category === state.activeCategory;
-        return matchCategory && textIncludes(item, state.query);
-      });
+      const query = state.query.toLowerCase();
+      const filtered = state.items
+        .map((item, index) => ({
+          item,
+          index,
+          score: getSearchScore(item, query)
+        }))
+        .filter(({ item, score }) => {
+          const matchCategory = !state.activeCategory || item.category === state.activeCategory;
+          return matchCategory && (!query || score > 0);
+        })
+        .sort((a, b) => {
+          if (!query) return a.index - b.index;
+          if (b.score !== a.score) return b.score - a.score;
+          return a.index - b.index;
+        })
+        .map(({ item }) => item);
 
       cards.innerHTML = "";
 
@@ -502,4 +524,3 @@
   </script>
 </body>
 </html>
-
