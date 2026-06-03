@@ -78,7 +78,11 @@
     "source_type": "人工查核",
     "source_checked_at": "2026-06-02",
     "needs_office_review": true,
-    "source_owner_note": "需確認雨天放學、路隊、安親班接送與臨時調整公告方式。"
+    "source_owner_note": "需確認雨天放學、路隊、安親班接送與臨時調整公告方式。",
+    "visualCard": {
+      "src": "assets/visual-cards/rainy-dismissal-v1.png",
+      "alt": "雨天放學與接送安全提醒圖卡"
+    }
   },
   {
     "id": "health-center-unwell",
@@ -105,7 +109,11 @@
     "source_type": "校網入口與人工查核",
     "source_checked_at": "2026-06-02",
     "needs_office_review": true,
-    "source_owner_note": "需確認健康中心服務範圍、通知原則與緊急傷病流程。"
+    "source_owner_note": "需確認健康中心服務範圍、通知原則與緊急傷病流程。",
+    "visualCard": {
+      "src": "assets/visual-cards/health-office-care-v1.png",
+      "alt": "孩子在校身體不舒服或受傷時的通知提醒圖卡"
+    }
   },
   {
     "id": "lunch_meal_refund_special_diet",
@@ -132,7 +140,11 @@
     "source_type": "校園午餐入口",
     "source_checked_at": "2026-06-02",
     "needs_office_review": true,
-    "source_owner_note": "校網有午餐相關入口，但退餐期限、特殊飲食、費用與申請流程需由午餐承辦或學務處確認後才能定稿。"
+    "source_owner_note": "校網有午餐相關入口，但退餐期限、特殊飲食、費用與申請流程需由午餐承辦或學務處確認後才能定稿。",
+    "visualCard": {
+      "src": "assets/visual-cards/lunch-guidance-v1.png",
+      "alt": "午餐退餐或特殊飲食確認提醒圖卡"
+    }
   },
   {
     "id": "learning-calendar",
@@ -186,7 +198,11 @@
     "source_type": "校網入口與人工查核",
     "source_checked_at": "2026-06-02",
     "needs_office_review": true,
-    "source_owner_note": "敏感議題只做求助導向，需由權責處室查核前台文字。"
+    "source_owner_note": "敏感議題只做求助導向，需由權責處室查核前台文字。",
+    "visualCard": {
+      "src": "assets/visual-cards/bullying-help-v1.png",
+      "alt": "遇到霸凌或不舒服互動時的求助提醒圖卡"
+    }
   },
   {
     "id": "help-gender-equity-support",
@@ -213,7 +229,11 @@
     "source_type": "校網入口與人工查核",
     "source_checked_at": "2026-06-02",
     "needs_office_review": true,
-    "source_owner_note": "前台文字需由權責處室或具相關專業人員查核。"
+    "source_owner_note": "前台文字需由權責處室或具相關專業人員查核。",
+    "visualCard": {
+      "src": "assets/visual-cards/gender-equity-help-v1.png",
+      "alt": "身體界線不舒服時的求助提醒圖卡"
+    }
   },
   {
     "id": "forms-common",
@@ -240,7 +260,11 @@
     "source_type": "人工查核",
     "source_checked_at": "2026-06-02",
     "needs_office_review": true,
-    "source_owner_note": "需盤點各處室表單，避免舊版或重複表單直接上線。"
+    "source_owner_note": "需盤點各處室表單，避免舊版或重複表單直接上線。",
+    "visualCard": {
+      "src": "assets/visual-cards/forms-common-v1.png",
+      "alt": "查找常用表單時的提醒圖卡"
+    }
   },
   {
     "id": "attendance_late_arrival",
@@ -271,7 +295,11 @@
     "source_type": "承辦人提供 PDF 與人工查核",
     "source_checked_at": "2026-06-03",
     "needs_office_review": true,
-    "source_owner_note": "已有審稿圖卡候選，未上架；遲到登記、通知方式與後續提醒需學務處確認。"
+    "source_owner_note": "已有審稿圖卡候選，未上架；遲到登記、通知方式與後續提醒需學務處確認。",
+    "visualCard": {
+      "src": "assets/visual-cards/late-arrival-v1.png",
+      "alt": "孩子遲到入校時的提醒圖卡"
+    }
   },
   {
     "id": "pickup_dismissal_routes",
@@ -302,7 +330,11 @@
     "source_type": "承辦人提供 PDF 與人工查核",
     "source_checked_at": "2026-06-03",
     "needs_office_review": true,
-    "source_owner_note": "已有審稿圖卡候選，未上架；路隊、接送位置、安親班接送與臨時調整需學務處確認。"
+    "source_owner_note": "已有審稿圖卡候選，未上架；路隊、接送位置、安親班接送與臨時調整需學務處確認。",
+    "visualCard": {
+      "src": "assets/visual-cards/dismissal-pickup-v1.png",
+      "alt": "放學路隊與家長接送提醒圖卡"
+    }
   },
   {
     "id": "attendance_early_leave",
@@ -333,7 +365,11 @@
     "source_type": "承辦人提供 PDF 與人工查核",
     "source_checked_at": "2026-06-03",
     "needs_office_review": true,
-    "source_owner_note": "已有審稿圖卡候選，未上架；提早離校表單、確認方式與接回流程需學務處確認。"
+    "source_owner_note": "已有審稿圖卡候選，未上架；提早離校表單、確認方式與接回流程需學務處確認。",
+    "visualCard": {
+      "src": "assets/visual-cards/early-leave-v1.png",
+      "alt": "提早離校時家長與學生配合提醒圖卡"
+    }
   },
   {
     "id": "attendance_leave_rules",
@@ -364,7 +400,11 @@
     "source_type": "承辦人提供 PDF 與人工查核",
     "source_checked_at": "2026-06-03",
     "needs_office_review": true,
-    "source_owner_note": "已有審稿圖卡候選，未上架；請假天數、表單版本、補件與核准方式需學務處確認。"
+    "source_owner_note": "已有審稿圖卡候選，未上架；請假天數、表單版本、補件與核准方式需學務處確認。",
+    "visualCard": {
+      "src": "assets/visual-cards/leave-request-v2.png",
+      "alt": "學生請假時家長與學生配合提醒圖卡"
+    }
   },
   {
     "id": "school_life_recess_safety",
@@ -395,6 +435,10 @@
     "source_type": "承辦人提供 PDF 與人工查核",
     "source_checked_at": "2026-06-03",
     "needs_office_review": true,
-    "source_owner_note": "已有審稿圖卡候選，未上架；走廊、樓梯、雨天活動與遊具使用提醒需學務處確認。"
+    "source_owner_note": "已有審稿圖卡候選，未上架；走廊、樓梯、雨天活動與遊具使用提醒需學務處確認。",
+    "visualCard": {
+      "src": "assets/visual-cards/recess-safety-v1.png",
+      "alt": "下課活動與校園安全提醒圖卡"
+    }
   }
 ]

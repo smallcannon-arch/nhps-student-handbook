@@ -200,6 +200,21 @@
       font-size: 0.92rem;
     }
 
+    .visual-card {
+      margin: 2px 0 0;
+    }
+
+    .visual-card img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #f8fafc;
+      box-shadow: 0 8px 18px rgba(23, 50, 77, 0.08);
+    }
+
     .meta {
       display: grid;
       gap: 4px;
@@ -441,6 +456,26 @@
         });
     }
 
+    function createVisualCardElement(item) {
+      const visualCard = item.visualCard;
+      if (!visualCard || !visualCard.src) {
+        return null;
+      }
+
+      const figure = document.createElement("figure");
+      figure.className = "visual-card";
+
+      const image = document.createElement("img");
+      image.src = visualCard.src;
+      if (Object.hasOwn(visualCard, "alt")) {
+        image.alt = visualCard.alt;
+      }
+      image.loading = "lazy";
+
+      figure.appendChild(image);
+      return figure;
+    }
+
     function renderCards() {
       const query = state.query.toLowerCase();
       const filtered = state.items
@@ -486,6 +521,10 @@
             <span>更新日期：${item.updated_at || "待確認"}</span>
           </div>
         `;
+        const visualCardElement = createVisualCardElement(item);
+        if (visualCardElement) {
+          article.querySelector(".meta").before(visualCardElement);
+        }
         cards.appendChild(article);
       });
     }

@@ -13,6 +13,8 @@ const files = {
   contacts: "data/contacts.json",
 };
 
+const visualCardPathPrefix = "assets/visual-cards/";
+
 const errors = [];
 const warnings = [];
 const fileResults = [];
@@ -165,6 +167,53 @@ function requireArrayField(item, index, fieldName) {
   }
 }
 
+function validateVisualCard(item, index) {
+  if (!Object.hasOwn(item, "visualCard") || item.visualCard === null) {
+    return;
+  }
+
+  if (!isObject(item.visualCard)) {
+    addError(`handbook-items[${index}].visualCard must be an object or null`);
+    return;
+  }
+
+  const { src, alt } = item.visualCard;
+
+  if (!Object.hasOwn(item.visualCard, "src")) {
+    addError(`handbook-items[${index}].visualCard.src is required`);
+  } else if (!isNonEmptyString(src)) {
+    addError(`handbook-items[${index}].visualCard.src must be a non-empty string`);
+  } else {
+    const trimmedSrc = src.trim();
+    if (!trimmedSrc.startsWith(visualCardPathPrefix)) {
+      addError(`handbook-items[${index}].visualCard.src must start with ${visualCardPathPrefix}`);
+    }
+    if (trimmedSrc.includes("\\")) {
+      addError(`handbook-items[${index}].visualCard.src must use / path separators`);
+    }
+    if (!trimmedSrc.toLowerCase().endsWith(".png")) {
+      addError(`handbook-items[${index}].visualCard.src must point to a .png file`);
+    }
+    if (!existsSync(path.join(rootDir, trimmedSrc))) {
+      addError(`handbook-items[${index}].visualCard.src file does not exist`);
+    }
+  }
+
+  if (!Object.hasOwn(item.visualCard, "alt")) {
+    addError(`handbook-items[${index}].visualCard.alt is required`);
+  } else if (!isNonEmptyString(alt)) {
+    addError(`handbook-items[${index}].visualCard.alt must be a non-empty string`);
+  } else {
+    const trimmedAlt = alt.trim();
+    if (trimmedAlt.length < 6) {
+      addWarning(`handbook-items[${index}].visualCard.alt is short`);
+    }
+    if (trimmedAlt.length > 80) {
+      addWarning(`handbook-items[${index}].visualCard.alt is long`);
+    }
+  }
+}
+
 const categories = readJsonArray("categories", files.categories);
 const handbookItems = readJsonArray("handbook-items", files.handbookItems);
 const sources = readJsonArray("sources", files.sources);
@@ -217,6 +266,7 @@ handbookItems.forEach((item, index) => {
   requireArrayField(item, index, "links");
   requireArrayField(item, index, "source_urls");
   requireArrayField(item, index, "tags");
+  validateVisualCard(item, index);
 
   if (Object.hasOwn(item, "status") && !isNonEmptyString(item.status)) {
     addWarning(`handbook-items[${index}].status is blank`);
