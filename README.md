@@ -20,6 +20,14 @@ repo：`nhps-student-handbook`
 - `data/`：第一版資料格式與安全範例資料。
 - `docs/`：企劃摘要、來源盤點、內容規範與 MVP 驗收標準。
 
+## 資料檢查
+
+修改 `data/*.json` 前後，請參考 [`docs/data-check-workflow.md`](docs/data-check-workflow.md)，並執行：
+
+```powershell
+node scripts/check-data.mjs
+```
+
 ## 安全邊界
 
 - 公開頁面只放一般制度、流程與求助方向。
@@ -27,4 +35,3 @@ repo：`nhps-student-handbook`
 - 不放事件細節、案件紀錄或可識別個人的描述。
 - 不把 token 或 secret 寫入 repo、文件、頁面或紀錄。
 - 校網資料需標示來源狀態；舊年度資料或未查核內容不得直接上線。
-
