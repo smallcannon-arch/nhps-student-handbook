@@ -1,0 +1,27 @@
+# Node / npm temporary files
+node_modules/
+npm-debug.log*
+
+# Python temporary files
+.venv/
+__pycache__/
+*.pyc
+
+# VS Code local user settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+.dev.vars
+*.local
+
+# Temporary and output directories
+tmp/
+temp/
+dist/
+build/
