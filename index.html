@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>內湖國小學生手冊</title>
+  <title>內湖國小校園生活手冊</title>
   <style>
     :root {
       color-scheme: light;
@@ -270,7 +270,7 @@
     <header class="hero">
       <div class="hero-inner">
         <p class="eyebrow">家長校園生活入口｜高年級學生友善版</p>
-        <h1>內湖國小學生手冊</h1>
+        <h1>內湖國小校園生活手冊</h1>
         <p class="subtitle">家長校園生活入口｜高年級學生友善版</p>
         <p class="intro">本頁為第一版靜態 MVP，用於整理家長與學生常用校園生活資訊。內容仍需由權責處室查核後，才能作為正式公告或流程依據。</p>
       </div>
@@ -278,13 +278,13 @@
 
     <main class="main">
       <section class="search-panel" aria-labelledby="search-title">
-        <label id="search-title" for="search-input">搜尋學生手冊</label>
+        <label id="search-title" for="search-input">搜尋校園生活手冊</label>
         <input id="search-input" type="search" placeholder="請輸入請假、放學、接送、健康中心、午餐、霸凌、性平……" autocomplete="off">
         <p class="hint">第一版先提供簡易查找與分類瀏覽；資料以靜態範例為主，正式內容須完成來源查核。</p>
       </section>
 
       <section class="section" aria-labelledby="entry-title">
-        <h2 id="entry-title">六大入口</h2>
+        <h2 id="entry-title">校園生活分類</h2>
         <div class="entry-grid" id="entry-grid"></div>
       </section>
 
@@ -500,7 +500,7 @@
       if (!filtered.length) {
         const empty = document.createElement("div");
         empty.className = "empty";
-        empty.textContent = "目前沒有符合條件的卡片。請改用其他關鍵字，或回到六大入口查看。";
+        empty.textContent = "目前沒有符合條件的卡片。請改用其他關鍵字，或回到校園生活分類查看。";
         cards.appendChild(empty);
         return;
       }

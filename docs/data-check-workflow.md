@@ -1,4 +1,4 @@
-# 學生手冊資料檢查流程
+# 內湖國小校園生活手冊資料檢查流程
 
 ## 目的
 
@@ -15,7 +15,7 @@ node scripts/check-data.mjs
 建議在專案根目錄執行：
 
 ```powershell
-cd "C:\Users\small\OneDrive\文件\學生手冊"
+cd "<repo 根目錄>"
 node scripts/check-data.mjs
 ```
 

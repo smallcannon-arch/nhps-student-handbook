@@ -303,7 +303,7 @@ contacts.forEach((contact, index) => {
   }
 });
 
-console.log("Student handbook data check");
+console.log("Campus life data check");
 console.log("");
 console.log("Files:");
 for (const result of fileResults) {
