@@ -513,9 +513,9 @@
             <span class="tag">${item.category}</span>
           </div>
           <h3>${item.title}</h3>
-          <p class="card-section"><strong>給家長</strong>${item.summary_parent}</p>
-          <p class="card-section"><strong>學生這樣做</strong>${item.summary_student}</p>
-          <p class="card-section"><strong>找誰</strong>${(item.contact_unit || []).join("、") || "待確認"}</p>
+          <p class="card-section"><strong>致家長</strong>${item.summary_parent}</p>
+          <p class="card-section"><strong>孩子可以這樣做</strong>${item.summary_student}</p>
+          <p class="card-section"><strong>聯繫窗口</strong>${(item.contact_unit || []).join("、") || "待確認"}</p>
           <div class="meta">
             <span class="status">來源狀態：${item.source_status || "待確認"}</span>
             <span>更新日期：${item.updated_at || "待確認"}</span>
