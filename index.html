@@ -249,6 +249,69 @@
       margin: 0 0 8px;
     }
 
+    @media (min-width: 960px) {
+      .hero-inner,
+      .main,
+      .footer-inner {
+        width: min(1240px, 100%);
+      }
+
+      .hero {
+        padding-top: 26px;
+        padding-bottom: 24px;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        grid-template-areas:
+          "entry search"
+          "entry cards";
+        gap: 18px 20px;
+        align-items: start;
+        padding-top: 16px;
+      }
+
+      .section {
+        margin-top: 0;
+      }
+
+      .search-panel {
+        grid-area: search;
+        margin-top: 0;
+      }
+
+      .section[aria-labelledby="entry-title"] {
+        position: sticky;
+        top: 16px;
+        grid-area: entry;
+      }
+
+      .section[aria-labelledby="cards-title"] {
+        grid-area: cards;
+      }
+
+      .entry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        gap: 8px;
+        padding: 14px;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 720px) {
       .entry-grid,
       .cards {
